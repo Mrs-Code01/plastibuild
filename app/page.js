@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Testimonial from "../components/TestimonialSection";
 import SocialSidebar from "../components/SocialSidebar";
+import Chat from "../components/Chat";
 
 const logos = [
   "https://res.cloudinary.com/dv7osqi65/image/upload/v1765964360/client-intake/gallery/hiusiqivqbf1kr0amegk.png",
@@ -468,6 +469,7 @@ const page = () => {
       </section>
       {/* End of FAQ  */}
       {/* End of FAQ  */}
+      <Chat />
     </>
   );
 };

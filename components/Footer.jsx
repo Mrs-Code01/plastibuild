@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Phone, Mail, Twitter } from "lucide-react";
 import VideoThumbnail from "./VideoThumbnail";
 import VideoModal from "./VideoModal";
+import ChatModal from "../components/ChatModal";
 
 const videoData = [
   { id: "3WdGJOxwcug", thumbnail: "/images/plasti7.jpg" },
@@ -156,6 +157,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <ChatModal />
       </footer>
 
       {/* Video Modal */}
