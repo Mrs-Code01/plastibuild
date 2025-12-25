@@ -1,8 +1,28 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import dynamic from "next/dynamic";
 
+// Dynamically import react-leaflet components (client-side only)
+const MapContainer = dynamic(
+  () => import("react-leaflet").then(mod => mod.MapContainer),
+  { ssr: false }
+);
+const TileLayer = dynamic(
+  () => import("react-leaflet").then(mod => mod.TileLayer),
+  { ssr: false }
+);
+const Marker = dynamic(() => import("react-leaflet").then(mod => mod.Marker), {
+  ssr: false
+});
+const Popup = dynamic(() => import("react-leaflet").then(mod => mod.Popup), {
+  ssr: false
+});
+const useMap = dynamic(() => import("react-leaflet").then(mod => mod.useMap), {
+  ssr: false
+});
+
+// LocationMarker component
 function LocationMarker({ position }) {
   const map = useMap();
   useEffect(() => {
@@ -29,14 +49,16 @@ export default function ContactUs() {
   const [userLocation, setUserLocation] = useState(null);
 
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(
-      pos => {
-        setUserLocation([pos.coords.latitude, pos.coords.longitude]);
-      },
-      () => {
-        setUserLocation([41.916, -88.304]); // fallback: Elgin, IL
-      }
-    );
+    if (typeof window !== "undefined" && navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        pos => {
+          setUserLocation([pos.coords.latitude, pos.coords.longitude]);
+        },
+        () => {
+          setUserLocation([41.916, -88.304]); // fallback: Elgin, IL
+        }
+      );
+    }
   }, []);
 
   const handleChange = e =>
