@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -11,9 +12,9 @@ const navItems = [
     label: "About",
     href: "#about",
     dropdown: [
-      { label: "Who We Are", href: "/who-we-are" },
-      { label: "Our Story", href: "/our-story" },
-      { label: "Partners & Collaborators", href: "/partners-and-collaborators" }
+      { label: "Who We Are", href: "/about-us/who-we-are" },
+      { label: "Our Story", href: "/about-us/our-story" },
+      { label: "Partners & Collaborators", href: "/about-us/partners-and-collaborators" }
     ]
   },
   {
@@ -77,16 +78,7 @@ const navItems = [
     ]
   },
   { label: "Media", href: "#media" },
-  {
-    label: "Get Involved",
-    href: "#get-involved",
-    dropdown: [
-      { label: "Partner With Us", href: "#partner" },
-      { label: "Join a Program", href: "#join-program" },
-      { label: "Sponsor a Project", href: "#sponsor" },
-      { label: "Volunteer / Collaborate", href: "#volunteer" }
-    ]
-  }
+  { label: "Join The Waitlist", href: "#waitlist" }
 ];
 
 export function Navbar() {
@@ -137,9 +129,12 @@ export function Navbar() {
             className="flex items-center gap-2 group"
             style={{ width: "140px" }}
           >
-            <span className="text-xl font-semibold tracking-tight text-foreground group-hover:text-primary transition-colors">
-              PlastiBuild
-            </span>
+            <Image
+              src="/images/logos/plastibuildlogo.jpg"
+              alt="logo"
+              width={230}
+              height={230}
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -216,7 +211,7 @@ export function Navbar() {
             style={{ width: "140px" }}
           >
             <Link
-              href="#contact"
+              href="/contact-us"
               onClick={() => handleLinkClick("#contact")}
               className={cn(
                 "px-4 py-2 text-sm font-medium rounded-lg transition-colors",
