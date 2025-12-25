@@ -16,7 +16,7 @@ const customFont2 = localFont({
 export const metadata = {
   title: "PlastiBuild Creative Solutions Limited",
   description:
-    "Climate-tech & sustainable manufacturing company driving circular economy innovation across Africa",
+    "Climate-tech & sustainable manufacturing company driving circular economy innovation across Africa...",
   icons: { icon: "/favicon.png" }
 };
 
