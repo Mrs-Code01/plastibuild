@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getKnowledgeContext } from "../../../lib/knowledgeBase";
+import { getKnowledgeContext } from "../../../lib/data/knowledgeBase";
 
 export async function POST(req) {
   try {

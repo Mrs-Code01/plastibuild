@@ -14,7 +14,10 @@ const navItems = [
     dropdown: [
       { label: "Who We Are", href: "/about-us/who-we-are" },
       { label: "Our Story", href: "/about-us/our-story" },
-      { label: "Partners & Collaborators", href: "/about-us/partners-and-collaborators" }
+      {
+        label: "Partners & Collaborators",
+        href: "/about-us/partners-and-collaborators"
+      }
     ]
   },
   {
@@ -78,7 +81,7 @@ const navItems = [
     ]
   },
   { label: "Media", href: "#media" },
-  { label: "Join The Waitlist", href: "#waitlist" }
+  { label: "Join The Waitlist", href: "/waitlist" }
 ];
 
 export function Navbar() {

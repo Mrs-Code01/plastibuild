@@ -4,14 +4,15 @@ import {
   FaYoutube,
   FaInstagram,
   FaTwitter,
-  FaWhatsapp
+  FaWhatsapp,
+  FaLinkedinIn
 } from "react-icons/fa";
 
 const SocialSidebar = () => {
   return (
     <div className="fixed top-1/3 right-0 flex flex-col space-y-2 z-50">
       <a
-        href="https://facebook.com"
+        href="https://www.facebook.com/share/1BRUFgBrwS/"
         target="_blank"
         rel="noopener noreferrer"
         className="bg-blue-600 p-3 text-white hover:opacity-80"
@@ -19,7 +20,7 @@ const SocialSidebar = () => {
         <FaFacebookF />
       </a>
       <a
-        href="https://youtube.com"
+        href="https://www.youtube.com/@PlastiBuildCreativeSolutions"
         target="_blank"
         rel="noopener noreferrer"
         className="bg-red-600 p-3 text-white hover:opacity-80"
@@ -27,7 +28,7 @@ const SocialSidebar = () => {
         <FaYoutube />
       </a>
       <a
-        href="https://instagram.com"
+        href="https://instagram.com/plastibuildcreativesolutions?igshid=ZGUzMzM3NWJiOQ=="
         target="_blank"
         rel="noopener noreferrer"
         className="bg-pink-500 p-3 text-white hover:opacity-80"
@@ -35,7 +36,7 @@ const SocialSidebar = () => {
         <FaInstagram />
       </a>
       <a
-        href="https://twitter.com"
+        href="https://twitter.com/Plastibuild?t=T8h3YOZLNHXIJ8SWHNPwXg&s=09"
         target="_blank"
         rel="noopener noreferrer"
         className="bg-sky-500 p-3 text-white hover:opacity-80"
@@ -43,12 +44,20 @@ const SocialSidebar = () => {
         <FaTwitter />
       </a>
       <a
-        href="https://whatsapp.com"
+        href="https://wa.link/5h5xsa"
         target="_blank"
         rel="noopener noreferrer"
         className="bg-green-500 p-3 text-white hover:opacity-80"
       >
         <FaWhatsapp />
+      </a>
+      <a
+        href="https://www.linkedin.com/company/plastibuild-creative-solutions/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-blue-700 p-3 text-white hover:opacity-80"
+      >
+        <FaLinkedinIn />
       </a>
     </div>
   );

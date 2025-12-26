@@ -19,7 +19,7 @@ const Popup = dynamic(() => import("react-leaflet").then(mod => mod.Popup), {
   ssr: false
 });
 
-export default function ContactUs() {
+export default function page() {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -51,11 +51,11 @@ export default function ContactUs() {
   };
 
   return (
-    <div className="font-raleway flex flex-col items-center md:p-8 bg-gray-100">
-      <h1 className="text-3xl pt-[100px] font-bold text-center mb-2">
+    <div className="w-[100%] font-raleway flex flex-col items-center md:p-8 bg-gray-100">
+      <h1 className="font-catamaran w-[50%] text-[35px] pt-[150px] text-center mb-2">
         Contact Us
       </h1>
-      <p className="text-center max-w-xl mb-6">
+      <p className="font-raleway w-[50%] text-[17px] text-center mb-6">
         If you have any questions, feel free to reach out via phone, text,
         email, the form below, or social media!
       </p>
@@ -63,7 +63,7 @@ export default function ContactUs() {
       {/* Contact Form */}
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col w-full max-w-xl space-y-4 bg-white p-6 rounded shadow"
+        className="flex flex-col w-[65%] bg-white py-[60px] px-[30px] rounded-[10px]"
       >
         <input
           type="text"
@@ -71,7 +71,7 @@ export default function ContactUs() {
           placeholder="Enter your name*"
           value={formData.name}
           onChange={handleChange}
-          className="border p-2 rounded"
+          className="border border-gray-300 py-[13px] px-[12px] rounded-[5px] mb-[15px]"
           required
         />
         <input
@@ -80,7 +80,7 @@ export default function ContactUs() {
           placeholder="Enter your phone number*"
           value={formData.phone}
           onChange={handleChange}
-          className="border p-2 rounded"
+          className="border border-gray-300 py-[13px] px-[12px] rounded-[5px] mb-[15px]"
           required
         />
         <input
@@ -89,7 +89,7 @@ export default function ContactUs() {
           placeholder="Enter your email*"
           value={formData.email}
           onChange={handleChange}
-          className="border p-2 rounded"
+          className="border border-gray-300 py-[13px] px-[12px] rounded-[5px] mb-[15px]"
           required
         />
         <textarea
@@ -97,20 +97,22 @@ export default function ContactUs() {
           placeholder="Your message"
           value={formData.message}
           onChange={handleChange}
-          className="border p-2 rounded h-32"
+          className="border border-gray-300 py-[13px] h-[150px] px-[12px] rounded-[5px] mb-[15px]"
         />
         <button
           type="submit"
-          className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
+          className="bg-[#000000] text-white py-[13px] px-[5px] px-4 rounded"
         >
           Send Message
         </button>
       </form>
 
       {/* Info Sections */}
-      <div className="flex flex-col md:flex-row justify-between w-full max-w-4xl mt-8 space-y-6 md:space-y-0 md:space-x-6">
-        <div className="flex-1 bg-white p-4 rounded shadow">
-          <h2 className="text-xl font-semibold mb-2">Contact Information</h2>
+      <div className="w-[65%] flex justify-between my-[50px]">
+        <div className="rounded-[10px] p-[20px] bg-[#ffffff] w-[48%]">
+          <h2 className="font-catamaran text-[20px] mb-[8px]">
+            Contact Information
+          </h2>
           <p>
             <strong>Phone:</strong> 773-985-1420
           </p>
@@ -118,26 +120,23 @@ export default function ContactUs() {
             <strong>Email:</strong> office@elginsportsmens.com
           </p>
           <p>
-            <strong>Address:</strong> 1435 N McLean Blvd, Elgin, IL
+            <strong>Address:</strong> Nipost Workshop Services Compound, Next to
+            LAWMA HEADQUARTERS, Ijora Olopa, Lagos
           </p>
         </div>
 
-        <div className="flex-1 bg-white p-4 rounded shadow">
-          <h2 className="text-xl font-semibold mb-2">Business Hours</h2>
+        <div className="rounded-[10px] p-[20px] bg-[#ffffff] w-[48%]">
+          <h2 className="font-catamaran text-[20px] mb-[8px]">
+            Business Hours
+          </h2>
           <p>
-            <strong>Mon - Fri:</strong> 9:00 a.m. - 8:00 p.m.
-          </p>
-          <p>
-            <strong>Saturday:</strong> 9:00 a.m. - 6:00 p.m.
-          </p>
-          <p>
-            <strong>Sunday:</strong> 9:00 a.m. - 5:00 p.m.
+            <strong>Mon - Fri:</strong> 9:00 a.m. - 5:00 p.m.
           </p>
         </div>
       </div>
 
       {/* Map */}
-      <div className="w-full relative z-[10] max-w-4xl h-96 mt-8 rounded overflow-hidden shadow">
+      <div className="w-[65%] relative z-[10] max-w-4xl h-96 mb-[100px] rounded overflow-hidden shadow">
         {userLocation && (
           <MapContainer
             center={userLocation}

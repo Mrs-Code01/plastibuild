@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Testimonial from "../components/TestimonialSection";
-import SocialSidebar from "../components/SocialSidebar";
+
 import Chat from "../components/Chat";
 
 const logos = [
@@ -114,33 +114,34 @@ const page = () => {
   const faqs = [
     {
       id: 1,
-      question: "Why is the sky blue?",
+      question: "What waste management services does PlastiBuild offer?",
       answer:
-        "A clear cloudless daytime sky is blue because molecules in the air scatter blue light from the sun more than they scatter red light. When we look towards the sun at sunset, we see red and orange colors because the blue light has been scattered out and away from the line of sight."
+        "PlastiBuild provides end-to-end waste management solutions, including waste audits, collection system design, segregation frameworks, and material recovery plans. We transform plastic and other recyclables from waste streams into usable materials for circular manufacturing, reducing landfill dependency, preventing open burning, and supporting climate action."
     },
     {
       id: 2,
-      question: "Where do babies come from?",
+      question: " What advisory services does PlastiBuild provide?",
       answer:
-        "Babies develop in the uterus during pregnancy. If you want age-appropriate resources or more detail, it’s best to ask a trusted adult or a healthcare professional."
+        "We offer consultancy on circular economy adoption, ESG integration, sustainable production, and environmental strategy. This includes lifecycle assessments, circular product design, policy alignment, and practical roadmaps for corporates, NGOs, and government agencies to achieve measurable sustainability outcomes."
     },
     {
       id: 3,
-      question: "When will we get there?",
+      question: "What training programs does PlastiBuild offer?",
       answer:
-        "Arrival time depends on distance and speed. Estimating with a map or navigation app can give a realistic timeframe."
+        "PlastiBuild delivers tailored workshops, seminars, and training sessions on ESG reporting, climate resilience, circular economy, and environmental compliance. These programs target corporates, NGOs, academic institutions, and government agencies, equipping teams with the skills to implement climate-smart decision-making and sustainability strategies."
     },
     {
       id: 4,
-      question: "When will we get there?",
+      question: "What is PlastiBuild DigiHub?",
       answer:
-        "Arrival time depends on distance and speed. Estimating with a map or navigation app can give a realistic timeframe."
+        "The DigiHub is our digital platform that complements our physical hubs. It connects waste pickers, artisans, recyclers, green businesses, and corporates across the circular economy. The platform integrates AI, IoT, blockchain, and data analytics to digitize waste management, carbon tracking, and sustainable manufacturing workflows."
     },
     {
       id: 5,
-      question: "When will we get there?",
+      question:
+        "What products and services are part of the waste-to-value ecosystem?",
       answer:
-        "Arrival time depends on distance and speed. Estimating with a map or navigation app can give a realistic timeframe."
+        "Our ecosystem converts waste into eco-friendly products like sustainable footwear (EcoFeet), green furniture, and eco-interiors. The DigiHub tracks the waste-to-product journey and monetizes it via carbon credits, token rewards, and marketplace sales, creating income opportunities for communities, artisans, and green SMEs."
     }
   ];
 
@@ -244,7 +245,7 @@ const page = () => {
       </section>
       {/* End of partners section */}
       {/* End of partners section */}
-      <SocialSidebar />
+
       <section className="w-[90%] mx-auto mb-[130px]">
         <div className="w-[90%] mx-auto mb-[50px] text-center text-[#262626]">
           <h2 className="font-catamaran text-[35px] mb-[15px]">Who We Are?</h2>
@@ -465,6 +466,12 @@ const page = () => {
               </div>
             ))}
           </div>
+          <Link
+            href="/faq"
+            className="font-raleway text-[19px] w-[100%] text-center bg-[#008000] text-[#ffffff] block rounded-[10px] py-[10px] mt-[20px]"
+          >
+            View All
+          </Link>
         </div>
       </section>
       {/* End of FAQ  */}

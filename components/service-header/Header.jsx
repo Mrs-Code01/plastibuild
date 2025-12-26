@@ -1,5 +1,5 @@
 import React from "react";
-import Breadcrumbs from "./BreadCrumbs";
+import Breadcrumbs from "../BreadCrumbs";
 
 const Header = ({ title, paths }) => {
   return (

@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar } from "../components/Navbar";
 import Footer from "../components/Footer";
+import SocialSidebar from "../components/SocialSidebar";
 
 const customFont1 = localFont({
   src: "./fonts/Catamaran-Black.ttf",
@@ -9,7 +10,7 @@ const customFont1 = localFont({
 });
 
 const customFont2 = localFont({
-  src: "./fonts/Raleway-Regular.ttf",
+  src: "./fonts/Poppins-Light.ttf",
   variable: "--raleway-font"
 });
 
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
       <body
         className={` ${customFont1.variable} ${customFont2.variable} antialiased`}
       >
+        <SocialSidebar />
         <Navbar />
         {children}
         <Footer />
