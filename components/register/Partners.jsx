@@ -65,7 +65,7 @@ const Partners = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post("/api/form", formData);
+      const res = await axios.post("/api/partnersform", formData);
       setPopup({ message: res.data.message, type: "success" });
       setFormData({
         firstname: "",

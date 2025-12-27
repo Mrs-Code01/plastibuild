@@ -4,43 +4,27 @@ import TestimonialCard from "./TestimonialCard";
 const testimonials = [
   {
     id: 1,
-    image: "/images/girl2.png",
+    image: "/images/testimonial/niyi.jpeg",
     quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Minus veritatis repellendus delectus, est, alias recusandae.",
-    name: "Jessica Jones",
-    role: "Web Designer"
+      "PlastiBuild's products are a game-changer for the communities we serve. They’re affordable, long-lasting, and empower local artisans while promoting sustainability—a perfect fit for our mission.",
+    name: "Rtrn Niyi Adekunle",
+    role: "President, rotary club of gbagada"
   },
   {
     id: 2,
-    image: "/images/girl4.png",
+    image: "/images/testimonial/mobala.png",
     quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Minus veritatis repellendus delectus, est, alias recusandae.",
-    name: "Maria Garcia",
-    role: "Product Manager"
+      "As a student, I’m all about affordability and style. My EcoFeet shoes are trendy, comfortable, and last long—no need for frequent replacements. Totally worth it!",
+    name: "Mobola Olaoye",
+    role: "Unilag Student"
   },
   {
     id: 3,
-    image: "/images/girl6.png",
+    image: "/images/testimonial/adams.png",
     quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Minus veritatis repellendus delectus, est, alias recusandae.",
-    name: "Sarah Wilson",
-    role: "UI Developer"
-  },
-  {
-    id: 4,
-    image: "/images/girl7.png",
-    quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Minus veritatis repellendus delectus, est, alias recusandae.",
-    name: "Emily Chen",
-    role: "Creative Director"
-  },
-  {
-    id: 5,
-    image: "/images/girl8.png",
-    quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Minus veritatis repellendus delectus, est, alias recusandae.",
-    name: "Amanda Brooks",
-    role: "Marketing Lead"
+      "I absolutely love PlastiBuild’s products! Knowing my EcoFeet shoes reduce waste and carbon emissions while being durable and stylish makes them my go-to choice. It’s sustainability without compromise!",
+    name: "Munnir Adams",
+    role: "climate advocate"
   }
 ];
 

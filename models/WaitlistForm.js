@@ -10,4 +10,4 @@ const formSchema = new mongoose.Schema({
 
 // Prevent model overwrite in dev
 export default mongoose.models.Form ||
-  mongoose.model("WaitlistForm", formSchema);
+  mongoose.model("WaitListForm", formSchema);

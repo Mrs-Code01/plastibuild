@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Phone, Mail, Twitter } from "lucide-react";
 import VideoThumbnail from "./VideoThumbnail";
 import VideoModal from "./VideoModal";
@@ -12,12 +13,35 @@ const videoData = [
 ];
 
 const tweets = [
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere unde veniam porro excepturi.",
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere unde veniam porro excepturi.",
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere unde veniam porro excepturi."
+  {
+    text:
+      "Big congratulations to ISWA ARC Member Amidu Mohammed, fondly called AmiduClimate!",
+    link:
+      "https://x.com/iswaafrica/status/1998144481741472232?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1998144481741472232%7Ctwgr%5Ef669d3873c0ff19680630cf072b68a01d8427ec4%7Ctwcon%5Es1_c10&ref_url=https%3A%2F%2Fpublish.twitter.com%2F%3Furl%3Dhttps%3A%2F%2Ftwitter.com%2Fiswaafrica%2Fstatus%2F1998144481741472232"
+  },
+  {
+    text:
+      "Eco-friendly steal alert! Get ready to step into sustainability in style...",
+    link:
+      "https://x.com/Plastibuild/status/1906680918116368823?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1906680918116368823%7Ctwgr%5Ed3956e1fbf034915758fd856d1740573a2090497%7Ctwcon%5Es1_c10&ref_url=https%3A%2F%2Fpublish.twitter.com%2F%3Furl%3Dhttps%3A%2F%2Ftwitter.com%2FPlastibuild%2Fstatus%2F1906680918116368823"
+  },
+  {
+    text: "Unlock sustainable growth with plastibuild training school!!",
+    link:
+      "https://x.com/Plastibuild/status/1875248081266200823?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1875248081266200823%7Ctwgr%5Ea22e9fe859af645656c879633acd4cc569807803%7Ctwcon%5Es1_c10&ref_url=https%3A%2F%2Fpublish.twitter.com%2F%3Furl%3Dhttps%3A%2F%2Ftwitter.com%2FPlastibuild%2Fstatus%2F1875248081266200823"
+  }
 ];
 
-const navLinks = ["Terms & Condition", "Privacy Policy"];
+const navLinks = [
+  {
+    text: "Terms & Condition",
+    ref: "/terms"
+  },
+  {
+    text: "Privacy Policy",
+    ref: "/privacy-policy"
+  }
+];
 
 const Footer = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
@@ -61,14 +85,14 @@ const Footer = () => {
               <div className="flex items-center mb-3">
                 <Phone size={16} className="text-primary mr-3" />
                 <span className="text-foreground text-[14px]">
-                  +1 291 3912 329
+                  +234 7086170247
                 </span>
               </div>
 
               <div className="flex items-center mb-8">
                 <Mail size={16} className="text-primary mr-3" />
                 <span className="text-foreground text-[14px]">
-                  info@gmail.com
+                  plastibuildcreatives@gmail.com
                 </span>
               </div>
 
@@ -107,9 +131,12 @@ const Footer = () => {
                       size={16}
                       className="text-primary mr-3 mt-1 flex-shrink-0"
                     />
-                    <p className="text-primary text-[14px] leading-relaxed ">
-                      {tweet}
-                    </p>
+                    <a
+                      href={tweet.link}
+                      className="text-primary text-[14px] leading-relaxed "
+                    >
+                      {tweet.text}
+                    </a>
                   </div>
                 ))}
               </div>
@@ -141,13 +168,13 @@ const Footer = () => {
             <div className="flex flex-wrap items-center justify-between">
               <nav className="flex flex-wrap gap-6">
                 {navLinks.map(link => (
-                  <a
+                  <Link
                     key={link}
-                    href="#"
+                    href={link.ref}
                     className="text-foreground text-[13px] hover:text-primary transition-colors"
                   >
-                    {link}
-                  </a>
+                    {link.text}
+                  </Link>
                 ))}
               </nav>
               <span className="text-[#ffffff] text-[13px]">
