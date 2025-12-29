@@ -80,7 +80,7 @@ const navItems = [
       }
     ]
   },
-  { label: "Media", href: "#media" },
+  { label: "Media", href: "/media" },
   { label: "Join The Waitlist", href: "/waitlist" }
 ];
 

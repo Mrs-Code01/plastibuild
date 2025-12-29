@@ -41,10 +41,13 @@ export default function ChatModal() {
         onClick={() => setIsOpen(true)}
         className="font-raleway flex items-center fixed z-[100] bottom-[24px] right-[24px] bg-[#008000] text-white px-[20px] py-[12px] rounded-[30px] shadow-lg hover:bg-[#006400] transition text-[16px] font-semibold cursor-pointer"
       >
-        <div style={{ display: "flex", gap: 14, alignItems: "center" }}>
+        <div
+          style={{ display: "flex", gap: 12, alignItems: "center" }}
+          className="text-[15px]"
+        >
           {/* Monochrome, currentColor for inheriting text color */}
           ChatBot
-          <Bot size={30} />
+          <Bot size={26} />
         </div>
       </button>
 

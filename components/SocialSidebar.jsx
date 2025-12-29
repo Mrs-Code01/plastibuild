@@ -10,7 +10,7 @@ import {
 
 const SocialSidebar = () => {
   return (
-    <div className="fixed top-1/3 right-0 flex flex-col space-y-2 z-50">
+    <div className="fixed top-1/3 right-0 flex flex-col space-y-2 z-[200]">
       <a
         href="https://www.facebook.com/share/1BRUFgBrwS/"
         target="_blank"

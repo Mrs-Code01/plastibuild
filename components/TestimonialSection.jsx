@@ -67,7 +67,7 @@ const TestimonialSection = () => {
         backgroundRepeat: "no-repeat"
       }}
     >
-      <h2 className="font-catamaran text-[35px] text-[#ffffff] mb-[50px]">
+      <h2 className="font-catamaran text-[35px] text-[#ffffff] mb-[50px] leading-[1.2] max-[1050px]:text-[33px] max-[750px]:text-[28px]">
         What People Say About Us
       </h2>
       <div className="font-raleway flex items-center justify-center gap-4 md:gap-6 pt-8 md:pt-12 w-full max-w-4xl">
