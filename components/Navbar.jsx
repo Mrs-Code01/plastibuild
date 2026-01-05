@@ -317,7 +317,7 @@ export function Navbar() {
               {/* Mobile CTA */}
               <div className="pt-4 mt-2 border-t border-border/40">
                 <Link
-                  href="#contact"
+                  href="/contact-us"
                   onClick={() => handleLinkClick("#contact")}
                   className={cn(
                     "block w-full text-center px-4 py-3 text-sm font-medium rounded-lg transition-colors",

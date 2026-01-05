@@ -17,9 +17,11 @@ const page = () => {
       {/* End of header */}
       {/* End of header */}
       <section className="w-[90%] mx-auto mb-[150px]">
-        <div className="w-[70%] mx-auto text-center mb-[50px]">
-          <h2 className="font-catamaran text-[35px]">Training & Workshops</h2>
-          <p className="font-raleway text-[17px]">
+        <div className="w-[70%] mx-auto text-center mb-[50px] max-[700px]:w-[100%] ">
+          <h2 className="font-catamaran text-[35px] max-[700px]:text-[30px] leading-[1.2] mb-[10px]">
+            Training & Workshops
+          </h2>
+          <p className="font-raleway text-[17px] max-[700px]:text-[15px] ">
             We deliver high-impact, hands-on training programs that build
             practical green skills for individuals, schools, corporate teams,
             and community groups.

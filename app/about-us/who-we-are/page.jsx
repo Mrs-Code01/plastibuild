@@ -17,8 +17,8 @@ const page = () => {
       />
       {/* End of header */}
       {/* End of header */}
-      <section className="w-[90%] mx-auto my-[100px]">
-        <h2 className="font-catamaran text-[35px] text-[#262626] w-[80%] mx-auto text-center leading-[1.2]">
+      <section className="w-[90%] mx-auto my-[100px] max-[700px]:text-center">
+        <h2 className="font-catamaran text-[35px] text-[#262626] w-[80%] mx-auto text-center leading-[1.2] max-[700px]:text-[30px] max-[700px]:w-[100%]">
           PlastiBuild Creative Solutions Limited is a climate-tech and
           sustainable manufacturing company
         </h2>
@@ -30,7 +30,7 @@ const page = () => {
           unoptimized
           className="w-[100%] h-[450px] object-cover object-top my-[50px]"
         />
-        <p className="font-raleway text-[17px] text-[#000000]">
+        <p className="font-raleway text-[17px] text-[#000000] max-[700px]:text-[15px]">
           We transform how communities manage waste, create value, and build
           climate resilience. We exist to solve one of Africa’s most pressing
           environmental challenges—urban waste pollution—by converting discarded
@@ -59,16 +59,16 @@ const page = () => {
           challenges.
         </p>
       </section>
-      <section className="w-[90%] mx-auto flex justify-between">
+      <section className="w-[90%] mx-auto flex justify-between flex-wrap gap-y-[30px] max-[820px]:flex-col">
         <Image
           src="/images/plasti9.jpg"
           alt="founder and colleagues"
           width={230}
           height={230}
           unoptimized
-          className="w-[48%] h-[450px] object-cover object-top"
+          className="w-[48%] max-[820px]:w-[100%] h-[530px] max-[1040px]:h-[600px] max-[900px]:h-[700px] max-[820px]:h-[500px] object-cover object-top"
         />
-        <p className="font-raleway w-[52%] h-[450px] mb-[100px] text-[#ffffff] text-[17px] bg-[#000000] p-[50px]">
+        <p className="font-raleway w-[52%] max-[820px]:w-[100%] h-[530px] max-[1040px]:h-[600px] max-[900px]:h-[700px] max-[820px]:h-[100%] mb-[100px] text-[#ffffff] text-[17px] max-[700px]:text-[15px] bg-[#000000] p-[50px] max-[500px]:p-[30px] max-[500px]:text-center">
           Beyond upcycling and training, PlastiBuild also delivers
           waste-to-energy innovations, developing low-emission briquettes,
           clean-burning materials, and community energy solutions that optimize
@@ -84,7 +84,7 @@ const page = () => {
         </p>
       </section>
       <section className="w-[90%] mx-auto mb-[100px]">
-        <p className="font-raleway text-[17px] text-[#000000]">
+        <p className="font-raleway text-[17px] text-[#000000] max-[700px]:text-[15px]">
           We are driven by a simple belief: waste is not a problem; it is an
           untapped resource waiting to be transformed into opportunity. Our
           mission is to build climate-smart communities where young people can

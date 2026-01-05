@@ -17,11 +17,11 @@ const page = () => {
       {/* End of header */}
       {/* End of header */}
       <section className="w-[90%] mx-auto mb-[150px]">
-        <div className="w-[70%] mx-auto text-center mb-[50px]">
-          <h2 className="font-catamaran text-[35px]">
+        <div className="w-[70%] mx-auto text-center mb-[50px] max-[700px]:w-[100%] ">
+          <h2 className="font-catamaran text-[35px] max-[700px]:text-[30px] leading-[1.2] mb-[10px]">
             Circular Product Design & Climate-Tech Innovation
           </h2>
-          <p className="font-raleway text-[17px]">
+          <p className="font-raleway text-[17px] max-[700px]:text-[15px]">
             We support innovators, startups, schools, research teams, and
             corporates in developing climate-smart products and solutions.
           </p>

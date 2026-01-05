@@ -6,7 +6,7 @@ const Header = ({ title, paths }) => {
     <>
       <header className="pt-[130px] pb-[60px] relative bg-[#DAD7CD] text-[#000000]">
         <div className="relative z-10 w-[90%] mx-auto flex flex-col justify-center items-center">
-          <h2 className="font-catamaran text-[35px] font-bold mb-[5px] tracking-[1.5px]">
+          <h2 className="font-catamaran text-[35px] max-[700px]:text-[30px] text-center font-bold mb-[5px] tracking-[1.5px]">
             {title}
           </h2>
           <Breadcrumbs paths={paths} />
@@ -15,7 +15,7 @@ const Header = ({ title, paths }) => {
       {/* End Of Header */}
       {/* End Of Header */}
       <section>
-        <p className="font-raleway  rounded-[10px] w-[60%] mx-auto my-[100px] text-[18px] text-[#ffffff] bg-[#3C2115] p-[30px] text-center">
+        <p className="font-raleway rounded-[10px] w-[60%] max-[700px]:w-[90%] mx-auto my-[100px] text-[18px] text-[#ffffff] bg-[#3C2115] p-[30px] text-center max-[700px]:text-[14px]">
           At PlastiBuild Creative Solutions, our projects and programs are
           designed to drive circular economy innovation, climate education, and
           community transformation. We combine hands-on upcycling, digital

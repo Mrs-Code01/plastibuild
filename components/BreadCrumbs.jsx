@@ -2,7 +2,7 @@ import React from "react";
 
 const Breadcrumbs = ({ paths }) => {
   return (
-    <section className="font-raleway text-[17px] text-[#000000]">
+    <section className="font-raleway text-[17px] max-[700px]:text-[14px] text-[#000000]">
       <ol className="flex space-x-[6px]">
         {paths.map((path, index) => (
           <li key={index} className="flex items-center">

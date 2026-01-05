@@ -5,11 +5,11 @@ export default function Partners({ dataset }) {
   const partners = partnersCollections[dataset];
 
   return (
-    <div className="flex justify-between flex-wrap w-[100%] gap-y-[30px]">
+    <div className="flex justify-between flex-wrap w-[100%] gap-y-[35px]">
       {partners.map((partner, index) => (
         <div
           key={index}
-          className="w-[23%] rounded-[10px] p-[30px] shadow-[0_4px_10px_rgba(0,0,0,0.25)] bg-[#ffffff] text-center"
+          className="w-[23%] max-[900px]:w-[48%] max-[500px]:w-[100%] rounded-[10px] p-[30px] shadow-[0_4px_10px_rgba(0,0,0,0.25)] bg-[#ffffff] text-center"
         >
           <Image
             src={partner.src}

@@ -88,12 +88,12 @@ const Waitlist = () => {
         initial={{ opacity: 0, x: -200 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
-        className="w-[60%] bg-white rounded-[10px] p-[50px]"
+        className="w-[60%] max-[700px]:w-[100%] bg-white rounded-[10px] p-[50px] max-[500px]:p-[30px]"
       >
-        <h2 className="font-catamaran text-center text-[35px] mb-[5px]">
+        <h2 className="font-catamaran text-center text-[35px] max-[700px]:text-[30px] mb-[5px] leading-[1.2]">
           Join The Waitlist
         </h2>
-        <p className="font-raleway text-center text-[16px] mb-[35px]">
+        <p className="font-raleway text-center text-[16px] max-[700px]:text-[15px] mb-[35px]">
           Be part of the excitement; Receive exclusive launch updates and
           notifications
         </p>
@@ -108,7 +108,7 @@ const Waitlist = () => {
               value={formData.firstname}
               onChange={handleChange}
               required
-              className="w-[48%]  h-[50px] border border-gray-300 rounded-[5px] px-[15px] text-[16px] mb-[20px] focus:outline-none focus:ring-1 focus:ring-black"
+              className="w-[48%] h-[50px] border border-gray-300 rounded-[5px] px-[15px] text-[16px] mb-[20px] focus:outline-none focus:ring-1 focus:ring-black max-[700px]:w-[100%] max-[500px]:text-[15px] max-[500px]:h-[40px]"
             />
             <input
               type="text"
@@ -117,7 +117,7 @@ const Waitlist = () => {
               value={formData.lastname}
               onChange={handleChange}
               required
-              className="w-[48%]  h-[50px] border border-gray-300 rounded-[5px] px-[15px] text-[16px] mb-[20px] focus:outline-none focus:ring-1 focus:ring-black"
+              className="w-[48%] h-[50px] border border-gray-300 rounded-[5px] px-[15px] text-[16px] mb-[20px] focus:outline-none focus:ring-1 focus:ring-black max-[700px]:w-[100%] max-[500px]:text-[15px] max-[500px]:h-[40px]"
             />
           </div>
 
@@ -129,7 +129,7 @@ const Waitlist = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full h-[50px] border border-gray-300 rounded-[5px] px-[15px] text-[16px] mb-[20px] focus:outline-none focus:ring-1 focus:ring-black"
+            className="w-full h-[50px] border border-gray-300 rounded-[5px] px-[15px] text-[16px] mb-[20px] focus:outline-none focus:ring-1 focus:ring-black max-[500px]:text-[15px] max-[500px]:h-[40px]"
           />
 
           {/* Phone Number */}
@@ -140,7 +140,7 @@ const Waitlist = () => {
             value={formData.phonenumber}
             onChange={handleChange}
             required
-            className="w-full h-[50px] border border-gray-300 rounded-[5px] px-[15px] text-[16px] mb-[20px] focus:outline-none focus:ring-1 focus:ring-black"
+            className="w-full h-[50px] border border-gray-300 rounded-[5px] px-[15px] text-[16px] mb-[20px] focus:outline-none focus:ring-1 focus:ring-black max-[500px]:text-[15px] max-[500px]:h-[40px]"
           />
 
           {/* Location Select */}
@@ -149,7 +149,7 @@ const Waitlist = () => {
             value={formData.location}
             onChange={handleChange}
             required
-            className="w-full h-[50px] border border-gray-300 rounded-[5px] px-[15px] text-[16px] mb-[20px] focus:outline-none focus:ring-1 focus:ring-black cursor-pointer"
+            className="w-full h-[50px] border border-gray-300 rounded-[5px] px-[15px] text-[16px] mb-[20px] focus:outline-none focus:ring-1 focus:ring-black cursor-pointer max-[500px]:text-[15px] max-[500px]:h-[40px]"
           >
             <option value="">Select Location</option>
             {region.map((state, index) => (
@@ -163,7 +163,7 @@ const Waitlist = () => {
           <button
             type="submit"
             disabled={loading}
-            className="cursor-pointer w-full h-[55px] bg-black text-white rounded-[5px] text-[18px] font-semibold transition-colors disabled:opacity-50"
+            className="cursor-pointer w-full h-[55px] bg-black text-white rounded-[5px] text-[18px] font-semibold transition-colors disabled:opacity-50 max-[500px]:text-[15px] max-[500px]:h-[40px]"
           >
             {loading ? "Submitting Form..." : "Join Now"}
           </button>

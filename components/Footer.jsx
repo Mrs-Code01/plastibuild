@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import Link from "next/link";
 import { Phone, Mail, Twitter } from "lucide-react";
 import VideoThumbnail from "./VideoThumbnail";
@@ -37,13 +38,36 @@ const navLinks = [
 const Footer = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [email, setEmail] = useState("");
+  const [submittedEmails, setSubmittedEmails] = useState([]);
+  const [message, setMessage] = useState("");
 
   const handleVideoClick = videoId => setSelectedVideo(videoId);
   const handleCloseModal = () => setSelectedVideo(null);
-  const handleSubmit = e => {
+
+  // Formspree hook
+  const [state, handleSubmit] = useForm("xnjnbpny");
+
+  // Custom wrapper around Formspree submit
+  const onSubmit = async e => {
     e.preventDefault();
-    console.log("Email submitted:", email);
-    setEmail("");
+
+    // Check for duplicate email
+    if (submittedEmails.includes(email)) {
+      setMessage("You have already submitted this email before.");
+      setEmail("");
+      setTimeout(() => setMessage(""), 10000);
+      return;
+    }
+
+    await handleSubmit(e); // call Formspree
+
+    // Safe check for errors
+    if (!state.errors || state.errors.length === 0) {
+      setSubmittedEmails(prev => [...prev, email]);
+      setMessage("Thanks for joining!");
+      setEmail(""); // clear field
+      setTimeout(() => setMessage(""), 10000);
+    }
   };
 
   return (
@@ -78,20 +102,43 @@ const Footer = () => {
               </div>
 
               {/* Email Subscription */}
-              <form onSubmit={handleSubmit} className="flex">
-                <input
-                  type="email"
-                  placeholder="Enter your e-mail"
-                  value={email}
-                  onChange={e => setEmail(e.target.value)}
-                  className="bg-[#ffffff] text-[#000000] text-[1.0625rem] px-[1rem] py-[0.75rem] rounded-tl-[0.625rem] rounded-bl-[0.625rem] outline-none placeholder:text-muted-foreground w-[65%]"
-                />
-                <button
-                  type="submit"
-                  className="bg-[#008000] text-[#000000] text-sm font-medium px-[1.5rem] py-[0.75rem] rounded-r-full hover:opacity-90 transition-opacity w-[35%]"
-                >
-                  Send
-                </button>
+              <form onSubmit={onSubmit} className="flex flex-col gap-2">
+                <div className="flex">
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Enter your e-mail"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                    className="bg-[#ffffff] text-[#000000] text-[17px] px-[1rem] py-[0.75rem] rounded-tl-[0.625rem] rounded-bl-[0.625rem] outline-none placeholder:text-muted-foreground w-[65%] max-[500px]:text-[14px]"
+                  />
+                  <ValidationError
+                    prefix="Email"
+                    field="email"
+                    errors={state.errors}
+                  />
+                  <button
+                    type="submit"
+                    disabled={state.submitting}
+                    className="bg-[#008000] text-[#ffffff] text-sm font-medium px-[1.5rem] py-[0.75rem] rounded-r-full hover:opacity-90 transition-opacity w-[35%]"
+                  >
+                    Send
+                  </button>
+                </div>
+
+                {/* Success / Error message */}
+                {message && (
+                  <p
+                    className={`text-sm mt-2 ${
+                      message.includes("already")
+                        ? "text-red-500"
+                        : "text-green-500"
+                    }`}
+                  >
+                    {message}
+                  </p>
+                )}
               </form>
             </div>
 

@@ -40,7 +40,7 @@ import ChatMessage from "./ChatMessage";
 
 export default function ChatContainer({ messages, onSend, isTyping }) {
   return (
-    <div className="font-raleway w-full max-w-[500px] mx-auto h-[70vh] border border-[#008000] rounded-[24px] overflow-hidden flex flex-col bg-[#f0fff0] shadow-lg">
+    <div className="font-raleway w-full max-w-[500px] mx-auto h-[70vh] max-[700px]:h-[40vh] border border-[#008000] rounded-[24px] overflow-hidden flex flex-col bg-[#f0fff0] shadow-lg">
       <div className="flex-1 overflow-y-auto px-[10px] py-[14px]">
         {messages.map((msg, index) => (
           <ChatMessage key={index} message={msg} />

@@ -162,13 +162,13 @@ const page = () => {
           </p>
           <div>
             <Link
-              href="#"
+              href="/media"
               className="font-raleway text-[19px] max-[1050px]:text-[16px] w-[200px] max-[820px]:w-[170px] text-center bg-[#008000] text-[#ffffff] border-[1px] border-[#28833d] inline-block rounded-[10px] py-[10px] mr-[15px] max-[430px]:w-[70%] max-[430px]:mb-[20px]"
             >
               Explore Our Work
             </Link>
             <Link
-              href="#"
+              href="/about-us/partners-and-collaborators"
               className="font-raleway text-[19px] max-[1050px]:text-[16px] w-[200px] max-[820px]:w-[170px] text-center bg-[#ffffff] border-[1px] inline-block rounded-[10px] py-[10px] mr-[15px] max-[430px]:w-[70%]"
             >
               Partner With Us

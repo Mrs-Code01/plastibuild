@@ -76,20 +76,20 @@ export default function ChatInput({ onSend }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="font-raleway w-full px-[16px] py-[12px] border-t border-[#008000] bg-white flex items-center gap-[12px]"
+      className="font-raleway w-[full] px-[16px] py-[12px] border-t border-[#008000] bg-white flex items-center gap-[12px]"
     >
-      <User className="text-[#008000] w-[24px] h-[24px]" />
+      <User className="text-[#008000] w-[24px] h-[24px] max-[500px]:hidden" />
       <input
         value={text}
         onChange={e => setText(e.target.value)}
         placeholder="Type your message..."
-        className="w-[calc(100%-96px)] px-[12px] py-[10px] border border-[#008000] rounded-[16px] text-sm focus:outline-none focus:ring-2 focus:ring-[#008000]"
+        className="w-[calc(100%-90px)] px-[12px] py-[10px] border border-[#008000] rounded-[16px] text-sm focus:outline-none focus:ring-1 focus:ring-[#008000] max-[500px]:w-[calc(100%-50px)]"
       />
       <button
         type="submit"
-        className="cursor-pointer w-[40px] h-[40px] bg-[#008000] text-white rounded-[12px] flex items-center justify-center hover:bg-[#006400] transition"
+        className="cursor-pointer w-[35px] h-[35px] bg-[#008000] text-white rounded-[12px] flex items-center justify-center hover:bg-[#006400] transition"
       >
-        <Send size={18} />
+        <Send size={15} />
       </button>
     </form>
   );

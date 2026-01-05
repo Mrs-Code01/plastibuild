@@ -17,21 +17,21 @@ const page = () => {
       />
       {/* End of header */}
       {/* End of header */}
-      <section className="w-[90%] mx-auto flex justify-between my-[100px]">
+      <section className="w-[90%] mx-auto flex justify-between my-[100px] flex-wrap max-[820px]:flex-col gap-y-[30px]">
         <Image
           src="/images/ourstory/plasti2.png"
           alt="founder and colleagues"
           width={230}
           height={230}
           unoptimized
-          className="w-[48%] object-cover object-top"
+          className="w-[48%] max-[820px]:w-[100%] object-cover object-top"
         />
-        <div className="w-[52%] pl-[50px] text-[#000000]">
-          <h2 className="font-catamaran text-[35px] text-[#262626] leading-[1.2] mb-[20px]">
+        <div className="w-[52%] max-[820px]:w-[100%] pl-[50px] max-[820px]:pl-[0px] text-[#000000] max-[500px]:text-center">
+          <h2 className="font-catamaran text-[35px] max-[700px]:text-[30px] text-[#262626] leading-[1.2] mb-[20px]">
             Our Story: How a Backyard Dream in Bariga Sparked a Climate-Tech
             Movement
           </h2>
-          <p className="font-raleway text-[17px] ">
+          <p className="font-raleway text-[17px] max-[700px]:text-[15px]">
             PlastiBuild Creative Solutions was born from the journey of a young
             innovator, Amidu, who grew up in the vibrant but heavily underserved
             community of Bariga, Lagos. From an early age, Amidu saw what many
@@ -50,8 +50,8 @@ const page = () => {
           </p>
         </div>
       </section>
-      <section className="w-[90%] mx-auto mb-[100px]">
-        <p className="font-raleway text-[17px] text-[#000000]">
+      <section className="w-[90%] mx-auto mb-[100px] max-[500px]:text-center">
+        <p className="font-raleway text-[17px] max-[700px]:text-[15px] text-[#000000]">
           Behind his family home in Bariga sat a small, rough, makeshift
           space—barely more than an open shed patched together with wood and
           zinc sheets. Most people wouldn’t look at it twice. But for Amidu, it
@@ -77,16 +77,16 @@ const page = () => {
           development, and circular economy solutions.
         </p>
       </section>
-      <section className="w-[90%] mx-auto flex justify-between">
+      <section className="w-[90%] mx-auto flex justify-between flex-wrap gap-y-[30px] max-[820px]:flex-col">
         <Image
           src="/images/plasti3.jpg"
           alt="award"
           width={230}
           height={230}
           unoptimized
-          className="w-[48%] h-[450px] object-cover object-top"
+          className="w-[48%] max-[820px]:w-[100%] h-[530px] max-[1040px]:h-[600px] max-[900px]:h-[700px] max-[820px]:h-[500px] object-cover object-top"
         />
-        <p className="font-raleway w-[52%] h-[450px] mb-[100px] text-[#ffffff] text-[17px] bg-[#000000] p-[50px]">
+        <p className="font-raleway w-[52%] max-[820px]:w-[100%] h-[530px] max-[1040px]:h-[600px] max-[900px]:h-[700px] max-[820px]:h-[100%] mb-[100px] text-[#ffffff] text-[17px] max-[700px]:text-[15px]  bg-[#000000] p-[50px] max-[500px]:p-[30px] max-[500px]:text-center">
           Today, PlastiBuild stands as one of Nigeria’s promising climate-tech
           enterprises, running upcycling hubs, makerspaces, training programs,
           and product innovation labs that empower young people, women, and
@@ -101,7 +101,7 @@ const page = () => {
           future of sustainability in Nigeria.
         </p>
       </section>
-      <section className="w-[40%] mx-auto mb-[100px]">
+      <section className="w-[40%] mx-auto mb-[100px] max-[820px]:w-[70%] max-[500px]:w-[90%]">
         <h2 className="font-catamaran text-[25px] text-[#262626] leading-[1.2]  text-center">
           Meet Our Founder: Amidu
         </h2>
@@ -114,7 +114,7 @@ const page = () => {
           width={230}
           height={230}
           unoptimized
-          className="w-[100%] h-[400px] object-cover object-center"
+          className="w-[100%] h-[400px] max-[500px]:h-[300px] object-cover object-center"
         />
       </section>
     </>
