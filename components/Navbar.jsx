@@ -122,7 +122,7 @@ export function Navbar() {
   };
 
   return (
-    <header className="font-raleway fixed top-0 left-0 right-0 z-50 border-b border-border/40 bg-white/95 backdrop-blur-[9px]">
+    <header className="font-raleway fixed top-0 left-0 right-0 z-[200] border-b border-border/40 bg-white/95 backdrop-blur-[9px]">
       <nav ref={navRef} className="mx-auto" style={{ width: "90%" }}>
         <div className="flex items-center justify-between h-16 min-[1100px]:h-20">
           {/* Logo */}

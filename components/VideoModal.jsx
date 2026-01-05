@@ -16,7 +16,7 @@ const VideoModal = ({ videoId, isOpen, onClose }) => {
       >
         <button
           onClick={onClose}
-          className="absolute -top-10 right-0 p-2 text-foreground hover:text-primary transition-colors"
+          className="absolute -top-10 right-0 p-2 text-[#ffffff]"
         >
           <X size={28} />
         </button>
