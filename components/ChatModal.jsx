@@ -53,7 +53,7 @@ export default function ChatModal() {
 
       {/* Modal */}
       {isOpen && (
-        <div className="fixed z-[100] inset-0 bg-black/40 flex items-center justify-center">
+        <div className="fixed z-[300] inset-0 bg-black/40 flex items-center justify-center">
           <div className="bg-white p-[40px] max-[700px]:p-[30px] rounded-[24px] w-[500px] max-[700px]:w-[320px]  shadow-xl relative">
             {/* Close Button */}
             <h1 className="font-catamaran text-[23px] text-center text-[#000000] pb-[10px] max-[500px]:text-[20px]">

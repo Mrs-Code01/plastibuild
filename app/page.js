@@ -284,7 +284,7 @@ const page = () => {
           />
         </div>
         <Link
-          href="#"
+          href="/about-us/who-we-are"
           className="font-raleway text-[19px] w-[200px] mx-auto text-center bg-[#008000] text-[#ffffff] block rounded-[10px] py-[10px] mt-[100px] max-[750px]:w-[170px] max-[750px]:text-[16px]"
         >
           View More
@@ -467,7 +467,7 @@ const page = () => {
                 {/* Accordion content with smooth animation */}
                 <div
                   className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    openId === item.id ? "max-h-40" : "max-h-0"
+                    openId === item.id ? "max-h-[260px]" : "max-h-0"
                   }`}
                 >
                   <div className="max-[700px]:text-[16px] px-4 pb-4 pt-1">

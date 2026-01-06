@@ -67,12 +67,4 @@ export default function ChatPage() {
       setIsTyping(false);
     }
   };
-
-  // return (
-  //   <ChatContainer
-  //     messages={messages}
-  //     onSend={handleSend}
-  //     isTyping={isTyping}
-  //   />
-  // );
 }
