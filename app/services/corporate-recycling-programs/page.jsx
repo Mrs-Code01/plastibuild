@@ -9,9 +9,9 @@ const page = () => {
         paths={[
           { label: "Home", href: "/" },
           {
-            label: "Circularity & sustainability consulting",
-            href: "#"
-          }
+            label: "Corporate Recycling Programs",
+            href: "#",
+          },
         ]}
       />
       {/* End of header */}

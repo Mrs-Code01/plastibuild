@@ -5,12 +5,12 @@ import {
   FaInstagram,
   FaTwitter,
   FaWhatsapp,
-  FaLinkedinIn
+  FaLinkedinIn,
 } from "react-icons/fa";
 
 const SocialSidebar = () => {
   return (
-    <div className="fixed top-1/3 right-0 flex flex-col space-y-2 z-[200]">
+    <div className="w-[40px] h-[35px] sticky top-[100px] ml-auto flex flex-col space-y-2 z-[100]">
       <a
         href="https://www.facebook.com/share/1BRUFgBrwS/"
         target="_blank"

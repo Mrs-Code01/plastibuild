@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Testimonial from "../components/TestimonialSection";
 import Chat from "../components/Chat";
+import SocialSidebar from "../components/SocialSidebar";
 
 const logos = [
   "/images/logos/logo1.png",
@@ -14,7 +15,7 @@ const logos = [
   "/images/logos/logo9.png",
   "/images/logos/logo18.png",
   "/images/logos/logo24.png",
-  "/images/logos/logo34.png"
+  "/images/logos/logo34.png",
 ];
 
 const services = [
@@ -22,91 +23,51 @@ const services = [
     title: "Training & Workshops",
     image: "/images/plastibuildhero.png",
     view: "/services/training-and-workshops",
-    text:
-      "We deliver high-impact, hands-on training programs that build practical green skills for individuals...",
-    bg: "#DBEAFE" // light blue
+    text: "We deliver high-impact, hands-on training programs that build practical green skills for individuals...",
+    bg: "#E0F2FE", // Light Blue (Sky/Water)
   },
   {
     title: "Circularity & Sustainability Consulting",
     image: "/images/plasti9.jpg",
     view: "/services/circularity-and-sustainability-consulting",
-    text:
-      "We support organisations in integrating circular economy principles, responsible production...",
-    bg: "#D1FAE5" // light green
+    text: "We support organisations in integrating circular economy principles, responsible production...",
+    bg: "#DCFCE7", // Light Green (Growth)
   },
   {
     title: "Corporate Recycling Programs",
     image: "/images/plasti9.jpg",
     view: "/services/corporate-recycling-programs",
-    text:
-      "We help companies design and execute efficient in-house recycling...",
-    bg: "#FEF3C7" // light yellow
+    text: "We help companies design and execute efficient in-house recycling...",
+    bg: "#ECFCCB", // Lemon/Lime (Freshness/Action)
   },
   {
     title: "Industrial Waste Management Solutions",
     image: "/images/plastibuildhero.png",
     view: "/services/industrial-waste-management-solutions",
-    text:
-      "We work with manufacturers, SMEs, and production facilities to manage waste streams...",
-    bg: "#E9D5FF" // light purple
+    text: "We work with manufacturers, SMEs, and production facilities to manage waste streams...",
+    bg: "#F9FAFB", // Off-white/White (Cleanliness)
   },
   {
     title: "Technology & Digital Solutions",
     image: "/images/plastibuildhero.png",
     view: "/services/technology-and-digital-solutions",
-    text:
-      "We build and deploy technology that enhances sustainability, waste management...",
-    bg: "#FBCFE8" // light pink
+    text: "We build and deploy technology that enhances sustainability, waste management...",
+    bg: "#DBEAFE", // Blue (Tech/Efficiency)
   },
   {
     title: "Circular Product Design & Climate-Tech Innovation",
     image: "/images/plasti9.jpg",
     view: "/services/circular-product-design",
-    text:
-      "We support innovators, startups, schools, research teams, and corporates in developing...",
-    bg: "#FECACA" // light red
+    text: "We support innovators, startups, schools, research teams, and corporates in developing...",
+    bg: "#BBF7D0", // Mid-Light Green (Innovation)
   },
   {
     title: "E-Learning & Digital Climate Education",
     image: "/images/plasti9.jpg",
     view: "/services/e-learning-and-digital-climate-education",
-    text:
-      "Our digital learning ecosystem makes climate literacy accessible to everyone...",
-    bg: "#F3F4F6" // light indigo
-  }
-];
-
-const testimonials = [
-  {
-    name: "Jessica Jones",
-    title: "Web Designer",
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Minus veritatis repellendus delectus, est, alias recusandae."
+    text: "Our digital learning ecosystem makes climate literacy accessible to everyone...",
+    bg: "#F3F4F6", // Light Grey/Black tint (Stability)
   },
-  {
-    name: "John Smith",
-    title: "UI Developer",
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Minus veritatis repellendus delectus, est, alias recusandae."
-  },
-  {
-    name: "Emily Clark",
-    title: "Project Manager",
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Minus veritatis repellendus delectus, est, alias recusandae."
-  },
-  {
-    name: "Michael Brown",
-    title: "Product Designer",
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Minus veritatis repellendus delectus, est, alias recusandae."
-  },
-  {
-    name: "Sophia Lee",
-    title: "Marketing Specialist",
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Minus veritatis repellendus delectus, est, alias recusandae."
-  }
 ];
 
 const page = () => {
@@ -117,33 +78,33 @@ const page = () => {
       id: 1,
       question: "What waste management services does PlastiBuild offer?",
       answer:
-        "PlastiBuild provides end-to-end waste management solutions, including waste audits, collection system design, segregation frameworks, and material recovery plans. We transform plastic and other recyclables from waste streams into usable materials for circular manufacturing, reducing landfill dependency, preventing open burning, and supporting climate action."
+        "PlastiBuild provides end-to-end waste management solutions, including waste audits, collection system design, segregation frameworks, and material recovery plans. We transform plastic and other recyclables from waste streams into usable materials for circular manufacturing, reducing landfill dependency, preventing open burning, and supporting climate action.",
     },
     {
       id: 2,
       question: " What advisory services does PlastiBuild provide?",
       answer:
-        "We offer consultancy on circular economy adoption, ESG integration, sustainable production, and environmental strategy. This includes lifecycle assessments, circular product design, policy alignment, and practical roadmaps for corporates, NGOs, and government agencies to achieve measurable sustainability outcomes."
+        "We offer consultancy on circular economy adoption, ESG integration, sustainable production, and environmental strategy. This includes lifecycle assessments, circular product design, policy alignment, and practical roadmaps for corporates, NGOs, and government agencies to achieve measurable sustainability outcomes.",
     },
     {
       id: 3,
       question: "What training programs does PlastiBuild offer?",
       answer:
-        "PlastiBuild delivers tailored workshops, seminars, and training sessions on ESG reporting, climate resilience, circular economy, and environmental compliance. These programs target corporates, NGOs, academic institutions, and government agencies, equipping teams with the skills to implement climate-smart decision-making and sustainability strategies."
+        "PlastiBuild delivers tailored workshops, seminars, and training sessions on ESG reporting, climate resilience, circular economy, and environmental compliance. These programs target corporates, NGOs, academic institutions, and government agencies, equipping teams with the skills to implement climate-smart decision-making and sustainability strategies.",
     },
     {
       id: 4,
       question: "What is PlastiBuild DigiHub?",
       answer:
-        "The DigiHub is our digital platform that complements our physical hubs. It connects waste pickers, artisans, recyclers, green businesses, and corporates across the circular economy. The platform integrates AI, IoT, blockchain, and data analytics to digitize waste management, carbon tracking, and sustainable manufacturing workflows."
+        "The DigiHub is our digital platform that complements our physical hubs. It connects waste pickers, artisans, recyclers, green businesses, and corporates across the circular economy. The platform integrates AI, IoT, blockchain, and data analytics to digitize waste management, carbon tracking, and sustainable manufacturing workflows.",
     },
     {
       id: 5,
       question:
         "What products and services are part of the waste-to-value ecosystem?",
       answer:
-        "Our ecosystem converts waste into eco-friendly products like sustainable footwear (EcoFeet), green furniture, and eco-interiors. The DigiHub tracks the waste-to-product journey and monetizes it via carbon credits, token rewards, and marketplace sales, creating income opportunities for communities, artisans, and green SMEs."
-    }
+        "Our ecosystem converts waste into eco-friendly products like sustainable footwear (EcoFeet), green furniture, and eco-interiors. The DigiHub tracks the waste-to-product journey and monetizes it via carbon credits, token rewards, and marketplace sales, creating income opportunities for communities, artisans, and green SMEs.",
+    },
   ];
 
   return (
@@ -240,7 +201,7 @@ const page = () => {
             }
           }
           .marquee {
-            animation: marquee 40s linear infinite;
+            animation: marquee 15s linear infinite;
           }
         `}</style>
       </section>
@@ -248,11 +209,12 @@ const page = () => {
       {/* End of partners section */}
 
       <section className="w-[90%] mx-auto mb-[130px]">
+        <SocialSidebar />
         <div className="w-[90%] mx-auto mb-[50px] text-center text-[#262626]">
           <h2 className="font-catamaran text-[35px] mb-[15px] max-[1050px]:text-[33px] max-[750px]:text-[28px]">
             Who We Are?
           </h2>
-          <p className="font-raleway text-[17px] max-[1050px]:text-[16px]">
+          <p className="w-[80%] mx-auto font-raleway text-[17px] max-[1050px]:text-[16px]">
             PlastiBuild Creative Solutions Limited is a climate-tech and
             sustainable manufacturing company transforming how communities
             manage waste, create value, and build climate resilience. We exist
@@ -411,7 +373,7 @@ const page = () => {
             </p>
           </header>
           <div className="w-full flex flex-col gap-3">
-            {faqs.map(item => (
+            {faqs.map((item) => (
               <div
                 key={item.id}
                 className="font-raleway text-[17px] w-full border border-slate-200 rounded-lg bg-white overflow-hidden"
