@@ -7,7 +7,7 @@ const services = [
     title: "Training & Workshops",
     description:
       "We deliver high-impact, hands-on training programs that build practical green skills for...",
-    slug: "cocopeat",
+    slug: "training-and-workshops",
     image: "/images/plasti19.jpg",
   },
   {
