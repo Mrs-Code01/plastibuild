@@ -61,7 +61,7 @@ const page = () => {
 
   return (
     <>
-      <main className="relative min-h-screen overflow-hidden py-[70px] px-[5%] flex justify-center items-center max-[1099px]:mt-[-10px]">
+      <main className="relative min-h-[700px] overflow-hidden py-[100px] px-[5%] flex justify-center items-center max-[1099px]:mt-[-10px]">
         {/* Animated Background */}
         <div
           className="absolute top-[-220px] inset-0 bg-cover bg-center opacity-4 animated-bg w-[100%] h-[1000px]"
@@ -69,7 +69,7 @@ const page = () => {
         ></div>
 
         {/* Content */}
-        <div className="relative z-20 text-center pt-[70px]">
+        <div className="relative z-20 text-center">
           <h1 className="font-catamaran text-[3.3rem] font-bold max-[670px]:text-[2.5rem] leading-[1.1] mb-[15px]">
             Welcome to PlastiBuild
           </h1>
@@ -116,7 +116,7 @@ const page = () => {
 
       {/* End of hero section */}
       {/* End of hero section */}
-      <section className="my-[130px]">
+      <section className="mb-[130px]">
         <h2 className="font-catamaran text-[35px] max-[1050px]:text-[33px] max-[750px]:text-[28px]  text-center mb-[40px] text-[#292929]">
           Trusted By
         </h2>
