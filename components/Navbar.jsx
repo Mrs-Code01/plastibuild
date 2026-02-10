@@ -10,15 +10,7 @@ const navItems = [
   { label: "Home", href: "/" },
   {
     label: "About",
-    href: "#about",
-    dropdown: [
-      { label: "Who We Are", href: "/about-us/who-we-are" },
-      { label: "Our Story", href: "/about-us/our-story" },
-      {
-        label: "Partners & Collaborators",
-        href: "/about-us/partners-and-collaborators"
-      }
-    ]
+    href: "/about-us",
   },
   {
     label: "Programs",
@@ -26,62 +18,31 @@ const navItems = [
     dropdown: [
       {
         label: "Digital Waste Upcycling Hub",
-        href: "/programs/digital-waste-upcycling-hub"
+        href: "/programs/digital-waste-upcycling-hub",
       },
       {
         label: "PlastiBuild Makerspace (Bariga)",
-        href: "/programs/plastibuild-makerspace"
+        href: "/programs/plastibuild-makerspace",
       },
       {
         label: "School & Youth Programs",
-        href: "/programs/school-and-youth-programs"
+        href: "/programs/school-and-youth-programs",
       },
       {
         label: "Research & Pilot Projects",
-        href: "/programs/research-and-pilot-projects"
+        href: "/programs/research-and-pilot-projects",
       },
       {
         label: "Community Empowerment & Climate Education",
-        href: "/programs/community-empowerment"
-      }
-    ]
+        href: "/programs/community-empowerment",
+      },
+    ],
   },
   {
     label: "Services",
-    href: "#services",
-    dropdown: [
-      {
-        label: "Training & Workshops",
-        href: "/services/training-and-workshops"
-      },
-      {
-        label: "Circularity & Sustainability Consulting",
-        href: "/services/circularity-and-sustainability-consulting"
-      },
-      {
-        label: "Corporate Recycling Programs",
-        href: "/services/corporate-recycling-programs"
-      },
-      {
-        label: "Industrial Waste Management Solutions",
-        href: "/services/industrial-waste-management-solutions"
-      },
-      {
-        label: "Technology & Digital Solutions",
-        href: "/services/technology-and-digital-solutions"
-      },
-      {
-        label: "Circular Product & Climate-Tech Design",
-        href: "/services/circular-product-design"
-      },
-      {
-        label: "E-Learning & Digital Climate Education",
-        href: "/services/e-learning-and-digital-climate-education"
-      }
-    ]
+    href: "/services",
   },
   { label: "Media", href: "/media" },
-  { label: "Join The Waitlist", href: "/waitlist" }
 ];
 
 export function Navbar() {
@@ -92,7 +53,7 @@ export function Navbar() {
 
   // Close menu when clicking outside
   useEffect(() => {
-    const handleClickOutside = event => {
+    const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
         setIsMobileMenuOpen(false);
         setOpenDropdown(null);
@@ -111,13 +72,13 @@ export function Navbar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const handleLinkClick = href => {
+  const handleLinkClick = (href) => {
     setActiveLink(href);
     setIsMobileMenuOpen(false);
     setOpenDropdown(null);
   };
 
-  const toggleDropdown = label => {
+  const toggleDropdown = (label) => {
     setOpenDropdown(openDropdown === label ? null : label);
   };
 
@@ -133,10 +94,11 @@ export function Navbar() {
             style={{ width: "140px" }}
           >
             <Image
-              src="/images/logos/plastibuildlogo.jpg"
+              src="/images/logos/plastibuildlogo.png"
               alt="logo"
               width={230}
               height={230}
+              unoptimized
             />
           </Link>
 
@@ -146,17 +108,17 @@ export function Navbar() {
             style={{ width: "calc(100% - 280px)" }}
           >
             <div className="flex items-center gap-1">
-              {navItems.map(item => (
+              {navItems.map((item) => (
                 <div key={item.label} className="relative group">
                   {item.dropdown ? (
                     <button
                       onClick={() => toggleDropdown(item.label)}
                       className={cn(
-                        "flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-colors",
+                        "flex items-center gap-1 px-3 py-2 text-[.9rem] font-medium rounded-lg transition-colors",
                         activeLink === item.href ||
-                          item.dropdown?.some(d => d.href === activeLink)
+                          item.dropdown?.some((d) => d.href === activeLink)
                           ? "text-green-600 bg-green-100"
-                          : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
+                          : "text-muted-foreground hover:text-foreground hover:bg-accent/50",
                       )}
                     >
                       {item.label}
@@ -164,7 +126,7 @@ export function Navbar() {
                         size={16}
                         className={cn(
                           "transition-transform duration-200",
-                          openDropdown === item.label ? "rotate-180" : ""
+                          openDropdown === item.label ? "rotate-180" : "",
                         )}
                       />
                     </button>
@@ -173,10 +135,10 @@ export function Navbar() {
                       href={item.href}
                       onClick={() => handleLinkClick(item.href)}
                       className={cn(
-                        "px-3 py-2 text-sm font-medium rounded-lg transition-colors block",
+                        "px-3 py-2 text-[.9rem] font-medium rounded-lg transition-colors block",
                         activeLink === item.href
                           ? "text-green-600 bg-green-100"
-                          : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
+                          : "text-muted-foreground hover:text-foreground hover:bg-accent/50",
                       )}
                     >
                       {item.label}
@@ -186,7 +148,7 @@ export function Navbar() {
                   {/* Desktop Dropdown */}
                   {item.dropdown && openDropdown === item.label && (
                     <div className="absolute top-full left-0 mt-1 min-w-[240px] bg-white border border-border rounded-lg shadow-lg py-2 z-50">
-                      {item.dropdown.map(dropdownItem => (
+                      {item.dropdown.map((dropdownItem) => (
                         <Link
                           key={dropdownItem.label}
                           href={dropdownItem.href}
@@ -195,7 +157,7 @@ export function Navbar() {
                             "block px-4 py-2 text-sm transition-colors",
                             activeLink === dropdownItem.href
                               ? "text-green-600 bg-green-100"
-                              : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
+                              : "text-muted-foreground hover:text-foreground hover:bg-accent/50",
                           )}
                         >
                           {dropdownItem.label}
@@ -220,7 +182,7 @@ export function Navbar() {
                 "px-4 py-2 text-sm font-medium rounded-lg transition-colors",
                 activeLink === "#contact"
                   ? "text-green-600 bg-green-100"
-                  : "text-primary-foreground bg-primary hover:bg-primary/90"
+                  : "text-primary-foreground bg-primary hover:bg-primary/90",
               )}
             >
               Contact
@@ -243,12 +205,12 @@ export function Navbar() {
             "min-[1100px]:hidden overflow-hidden transition-all duration-300 ease-out",
             isMobileMenuOpen
               ? "max-h-[calc(100vh-4rem)] opacity-100"
-              : "max-h-0 opacity-0"
+              : "max-h-0 opacity-0",
           )}
         >
           <div className="py-4 border-t border-border/40">
             <div className="flex flex-col gap-1">
-              {navItems.map(item => (
+              {navItems.map((item) => (
                 <div key={item.label}>
                   {item.dropdown ? (
                     <>
@@ -257,9 +219,9 @@ export function Navbar() {
                         className={cn(
                           "flex items-center justify-between w-full px-4 py-3 text-sm font-medium rounded-lg transition-colors",
                           activeLink === item.href ||
-                            item.dropdown?.some(d => d.href === activeLink)
+                            item.dropdown?.some((d) => d.href === activeLink)
                             ? "text-green-600 bg-green-100"
-                            : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
+                            : "text-muted-foreground hover:text-foreground hover:bg-accent/50",
                         )}
                       >
                         {item.label}
@@ -267,7 +229,7 @@ export function Navbar() {
                           size={16}
                           className={cn(
                             "transition-transform duration-200",
-                            openDropdown === item.label ? "rotate-180" : ""
+                            openDropdown === item.label ? "rotate-180" : "",
                           )}
                         />
                       </button>
@@ -275,11 +237,11 @@ export function Navbar() {
                       <div
                         className={cn(
                           "overflow-hidden transition-all duration-200 ease-out",
-                          openDropdown === item.label ? "max-h-96" : "max-h-0"
+                          openDropdown === item.label ? "max-h-96" : "max-h-0",
                         )}
                       >
                         <div className="pl-4 py-1">
-                          {item.dropdown.map(dropdownItem => (
+                          {item.dropdown.map((dropdownItem) => (
                             <Link
                               key={dropdownItem.label}
                               href={dropdownItem.href}
@@ -288,7 +250,7 @@ export function Navbar() {
                                 "block px-4 py-2 text-sm rounded-lg transition-colors",
                                 activeLink === dropdownItem.href
                                   ? "text-green-600 bg-green-100"
-                                  : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
+                                  : "text-muted-foreground hover:text-foreground hover:bg-accent/50",
                               )}
                             >
                               {dropdownItem.label}
@@ -305,7 +267,7 @@ export function Navbar() {
                         "block px-4 py-3 text-sm font-medium rounded-lg transition-colors",
                         activeLink === item.href
                           ? "text-green-600 bg-green-100"
-                          : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
+                          : "text-muted-foreground hover:text-foreground hover:bg-accent/50",
                       )}
                     >
                       {item.label}
@@ -323,7 +285,7 @@ export function Navbar() {
                     "block w-full text-center px-4 py-3 text-sm font-medium rounded-lg transition-colors",
                     activeLink === "#contact"
                       ? "text-green-600 bg-green-100"
-                      : "text-primary-foreground bg-primary hover:bg-primary/90"
+                      : "text-primary-foreground bg-primary hover:bg-primary/90",
                   )}
                 >
                   Contact

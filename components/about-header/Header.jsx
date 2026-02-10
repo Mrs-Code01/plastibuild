@@ -4,7 +4,7 @@ import Breadcrumbs from "../BreadCrumbs";
 const Header = ({ title, paths }) => {
   return (
     <>
-      <header className="pt-[130px] pb-[60px] relative bg-[#DAD7CD] text-[#000000]">
+      <header className="pt-[130px] pb-[60px] relative bg-[#008000] text-[#ffffff]">
         <div className="relative z-10 w-[90%] mx-auto flex flex-col justify-center items-center">
           <h2 className="font-catamaran text-[35px] max-[700px]:text-[30px] text-center font-bold mb-[5px] leading-[1.2]">
             {title}

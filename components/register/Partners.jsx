@@ -42,7 +42,7 @@ const Partners = () => {
     "Sokoto",
     "Taraba",
     "Yobe",
-    "Zamfara"
+    "Zamfara",
   ];
 
   const [formData, setFormData] = useState({
@@ -50,17 +50,17 @@ const Partners = () => {
     lastname: "",
     email: "",
     phonenumber: "",
-    location: ""
+    location: "",
   });
 
   const [loading, setLoading] = useState(false);
   const [popup, setPopup] = useState({ message: "", type: "" });
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
@@ -72,7 +72,7 @@ const Partners = () => {
         lastname: "",
         email: "",
         phonenumber: "",
-        location: ""
+        location: "",
       });
     } catch (err) {
       setPopup({ message: "Error submitting form", type: "error" });
@@ -83,7 +83,7 @@ const Partners = () => {
   };
 
   return (
-    <section className="w-full bg-[#DAD7CD] py-[100px] px-[5%] flex justify-center">
+    <section className="w-full bg-[#008000] py-[100px] px-[5%] flex justify-center">
       <motion.div
         initial={{ opacity: 0, x: -200 }}
         whileInView={{ opacity: 1, x: 0 }}

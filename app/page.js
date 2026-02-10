@@ -3,9 +3,10 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Testimonial from "../components/TestimonialSection";
-import Chat from "../components/Chat";
-import SocialSidebar from "../components/SocialSidebar";
+import Testimonial from "@/components/TestimonialSection";
+import Chat from "@/components/Chat";
+import FadeSlider from "@/components/FadeSlider";
+import Waitlist from "@/components/register/Waitlist";
 
 const logos = [
   "/images/logos/logo1.png",
@@ -18,60 +19,11 @@ const logos = [
   "/images/logos/logo34.png",
 ];
 
-const services = [
-  {
-    title: "Training & Workshops",
-    image: "/images/plastibuildhero.png",
-    view: "/services/training-and-workshops",
-    text: "We deliver high-impact, hands-on training programs that build practical green skills for individuals...",
-    bg: "#E0F2FE", // Light Blue (Sky/Water)
-  },
-  {
-    title: "Circularity & Sustainability Consulting",
-    image: "/images/plasti9.jpg",
-    view: "/services/circularity-and-sustainability-consulting",
-    text: "We support organisations in integrating circular economy principles, responsible production...",
-    bg: "#DCFCE7", // Light Green (Growth)
-  },
-  {
-    title: "Corporate Recycling Programs",
-    image: "/images/plasti9.jpg",
-    view: "/services/corporate-recycling-programs",
-    text: "We help companies design and execute efficient in-house recycling...",
-    bg: "#ECFCCB", // Lemon/Lime (Freshness/Action)
-  },
-  {
-    title: "Industrial Waste Management Solutions",
-    image: "/images/plastibuildhero.png",
-    view: "/services/industrial-waste-management-solutions",
-    text: "We work with manufacturers, SMEs, and production facilities to manage waste streams...",
-    bg: "#F9FAFB", // Off-white/White (Cleanliness)
-  },
-  {
-    title: "Technology & Digital Solutions",
-    image: "/images/plastibuildhero.png",
-    view: "/services/technology-and-digital-solutions",
-    text: "We build and deploy technology that enhances sustainability, waste management...",
-    bg: "#DBEAFE", // Blue (Tech/Efficiency)
-  },
-  {
-    title: "Circular Product Design & Climate-Tech Innovation",
-    image: "/images/plasti9.jpg",
-    view: "/services/circular-product-design",
-    text: "We support innovators, startups, schools, research teams, and corporates in developing...",
-    bg: "#BBF7D0", // Mid-Light Green (Innovation)
-  },
-  {
-    title: "E-Learning & Digital Climate Education",
-    image: "/images/plasti9.jpg",
-    view: "/services/e-learning-and-digital-climate-education",
-    text: "Our digital learning ecosystem makes climate literacy accessible to everyone...",
-    bg: "#F3F4F6", // Light Grey/Black tint (Stability)
-  },
-];
-
 const page = () => {
   const [openId, setOpenId] = useState(1);
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
+  const openModal = () => setIsWaitlistOpen(true);
+  const closeModal = () => setIsWaitlistOpen(false);
 
   const faqs = [
     {
@@ -109,42 +61,59 @@ const page = () => {
 
   return (
     <>
-      <main className="mt-[140px] mb-[120px] w-[90%] mx-auto flex justify-between items-center flex-wrap gap-y-[70px]">
-        <div className="w-[60%] max-[750px]:w-[100%] max-[750px]:text-center ">
-          <p className="font-raleway bg-[#DAD7CD] border-[1px] text-[#000000] text-[19px] max-[1050px]:text-[15px] p-[10px] rounded-[10px] inline-block mb-[10px]">
-            PlastiBuild Creative Solutions Limited
-          </p>
-          <h1 className="font-catamaran text-[60px] max-[1050px]:text-[45px] max-[1050px]:text-[38px] max-[750px]:text-[34px] leading-[1.2]">
-            Turning Waste Into Climate Solutions, Jobs, and Opportunity
+      <main className="relative min-h-screen overflow-hidden py-[70px] px-[5%] flex justify-center items-center max-[1099px]:mt-[-10px]">
+        {/* Animated Background */}
+        <div
+          className="absolute top-[-220px] inset-0 bg-cover bg-center opacity-4 animated-bg w-[100%] h-[1000px]"
+          style={{ backgroundImage: "url('/images/abstract.png')" }}
+        ></div>
+
+        {/* Content */}
+        <div className="relative z-20 text-center pt-[70px]">
+          <h1 className="font-catamaran text-[3.3rem] font-bold max-[670px]:text-[2.5rem] leading-[1.1] mb-[15px]">
+            Welcome to PlastiBuild
           </h1>
-          <p className="font-raleway text-[19px] max-[1050px]:text-[16px] leading-[1.4] mt-[20px] mb-[35px]">
-            Climate-tech & sustainable manufacturing company driving circular
-            economy innovation across Africa
+          <p className="font-raleway w-[60%] mx-auto text-[1.2rem] max-[670px]:text-[1rem] max-[670px]:w-[90%]">
+            We are a climate-tech and sustainable manufacturing company
+            transforming waste into value through circular innovation, green
+            technologies, and community empowerment across Africa
           </p>
-          <div>
-            <Link
-              href="/media"
-              className="font-raleway text-[19px] max-[1050px]:text-[16px] w-[200px] max-[820px]:w-[170px] text-center bg-[#008000] text-[#ffffff] border-[1px] border-[#28833d] inline-block rounded-[10px] py-[10px] mr-[15px] max-[430px]:w-[70%] max-[430px]:mb-[20px]"
+          <div className="mt-[30px]">
+            <button
+              onClick={openModal}
+              className=" font-raleway text-[#ffffff] text-[1.1rem] w-[170px] bg-[#008000] rounded-full py-[12px] mr-[20px] cursor-pointer max-[420px]:w-[240px] max-[420px]:mr-[0px] max-[420px]:mb-[20px]"
             >
-              Explore Our Work
-            </Link>
+              Join Waitlist
+            </button>
+            <Waitlist isOpen={isWaitlistOpen} onClose={closeModal} />
             <Link
-              href="/about-us/partners-and-collaborators"
-              className="font-raleway text-[19px] max-[1050px]:text-[16px] w-[200px] max-[820px]:w-[170px] text-center bg-[#ffffff] border-[1px] inline-block rounded-[10px] py-[10px] mr-[15px] max-[430px]:w-[70%]"
+              href="/about-us"
+              className=" font-raleway w-[170px] border border-[#000000] rounded-full py-[12px] inline-block max-[420px]:w-[240px]"
             >
-              Partner With Us
+              Learn More
             </Link>
           </div>
         </div>
-        <Image
-          src="/images/plastibuildhero.png"
-          alt="plastibuildhero"
-          width={200}
-          height={200}
-          className="w-[37%] max-[750px]:w-[100%]"
-          unoptimized
-        />
+
+        {/* Animation Styles */}
+        <style>
+          {`
+      .animated-bg {
+        animation: slowZoom 5s ease-in-out infinite alternate;
+      }
+
+      @keyframes slowZoom {
+        0% {
+          transform: scale(1) translateY(0px);
+        }
+        100% {
+          transform: scale(1.05) translateY(-10px);
+        }
+      }
+    `}
+        </style>
       </main>
+
       {/* End of hero section */}
       {/* End of hero section */}
       <section className="my-[130px]">
@@ -209,12 +178,11 @@ const page = () => {
       {/* End of partners section */}
 
       <section className="w-[90%] mx-auto mb-[130px]">
-        <SocialSidebar />
         <div className="w-[90%] mx-auto mb-[50px] text-center text-[#262626]">
           <h2 className="font-catamaran text-[35px] mb-[15px] max-[1050px]:text-[33px] max-[750px]:text-[28px]">
             Who We Are?
           </h2>
-          <p className="w-[80%] mx-auto font-raleway text-[17px] max-[1050px]:text-[16px]">
+          <p className="w-[100%] mx-auto font-raleway text-[17px] max-[1050px]:text-[16px]">
             PlastiBuild Creative Solutions Limited is a climate-tech and
             sustainable manufacturing company transforming how communities
             manage waste, create value, and build climate resilience. We exist
@@ -247,7 +215,7 @@ const page = () => {
         </div>
         <Link
           href="/about-us/who-we-are"
-          className="font-raleway text-[19px] w-[200px] mx-auto text-center bg-[#008000] text-[#ffffff] block rounded-[10px] py-[10px] mt-[100px] max-[750px]:w-[170px] max-[750px]:text-[16px]"
+          className="font-raleway text-[19px] w-[170px] mx-auto text-center bg-[#008000] text-[#ffffff] block rounded-full py-[10px] mt-[100px] max-[750px]:w-[170px] max-[750px]:text-[16px]"
         >
           View More
         </Link>
@@ -270,37 +238,47 @@ const page = () => {
         </div>
 
         {/* Flex container wrapping all service cards */}
-        <div className="w-[100%] flex flex-wrap justify-between gap-y-[40px]">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              style={{ backgroundColor: service.bg }}
-              className="flex justify-between items-start flex-wrap w-[48%] border rounded-[10px] p-[20px] max-[1000px]:flex-col max-[700px]:items-center max-[700px]:px-[16px] max-[700px]:w-[100%]"
+
+        <section className="grid md:grid-cols-2 gap-10 items-center">
+          {/* LEFT SIDE (IMAGE SLIDER) */}
+          <FadeSlider />
+
+          {/* RIGHT SIDE (TEXT) */}
+          <div>
+            <h2 className="font-catamaran text-[2rem] font-bold text-[#008000] mb-[10px]">
+              PlastiBuild Services
+            </h2>
+
+            <ul className="font-raleway text-[1rem]">
+              <li className="mb-[7px]">&bull;&nbsp;Training and Workshops</li>
+              <li className="mb-[7px]">
+                &bull;&nbsp;Circularity and Sustainability Consulting
+              </li>
+              <li className="mb-[7px]">
+                &bull;&nbsp;Corporate Recycling Programs
+              </li>
+              <li className="mb-[7px]">
+                &bull;&nbsp;Industrial Waste Management Solutions
+              </li>
+              <li className="mb-[7px]">
+                &bull;&nbsp;Technology and Digital Solutions
+              </li>
+              <li className="mb-[7px]">
+                &bull;&nbsp;Circular Product and Climate-Tech Design
+              </li>
+              <li className="mb-[7px]">
+                &bull;&nbsp;E-Learning and Digital Climate Education
+              </li>
+            </ul>
+
+            <Link
+              href="/services"
+              className="font-raleway w-[170px] mx-auto mt-6 px-6 py-[10px] border border-[#008000] text-[#008000] rounded-full hover:bg-[#008000] hover:text-white transition cursor-pointer inline-block text-center"
             >
-              <Image
-                src={service.image}
-                alt={service.title}
-                width={70}
-                height={70}
-                className="object-cover w-[70px] h-[70px] rounded-[100%] border-[2px] border-[#000000]"
-              />
-              <div className="w-[80%] max-[1000px]:w-[100%] max-[700px]:text-center">
-                <h3 className="font-catamaran text-[20px] leading-[1.1] mb-[8px] mt-[12px] max-[700px]:text-[18px]">
-                  {service.title}
-                </h3>
-                <p className="font-raleway text-[#000000] text-[16px] max-[700px]:text-[15px]">
-                  {service.text}
-                </p>
-                <Link
-                  href={service.view}
-                  className="font-raleway text-[#000000] text-[16px] bg-[#ffffff] rounded-[10px] p-[5px] border-[1px] inline-block w-[70px] text-center mt-[10px] hover:opacity-[.7] max-[700px]:text-[15px]"
-                >
-                  View
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
+              View More
+            </Link>
+          </div>
+        </section>
       </section>
       {/* End of services */}
       {/* End of services */}

@@ -5,7 +5,7 @@ const VideoThumbnail = ({ thumbnail, onClick }) => {
   return (
     <button
       onClick={onClick}
-      className="relative z-[100] group overflow-hidden rounded-lg cursor-pointer"
+      className="relative z-[1] group overflow-hidden rounded-lg cursor-pointer"
       style={{ width: "100%" }}
     >
       <img

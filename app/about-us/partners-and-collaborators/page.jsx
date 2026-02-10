@@ -12,14 +12,14 @@ const page = () => {
           { label: "Home", href: "/" },
           {
             label: "Partners and collaborators",
-            href: "#"
-          }
+            href: "#",
+          },
         ]}
       />
       {/* End of header */}
       {/* End of header */}
       <section>
-        <p className="font-raleway rounded-[10px] w-[60%] max-[700px]:w-[90%] mx-auto my-[100px] text-[18px] max-[700px]:text-[15px] text-[#ffffff] bg-[#3C2115] p-[30px] text-center">
+        <p className="font-raleway rounded-[10px] w-[60%] max-[700px]:w-[90%] mx-auto my-[100px] text-[18px] max-[700px]:text-[15px] text-[#ffffff] bg-[#000000] p-[30px] text-center">
           Over the years, PlastiBuild Creative Solutions Limited has grown
           through meaningful collaborations with organizations that share our
           vision for a cleaner, more innovative, and more inclusive future. Our

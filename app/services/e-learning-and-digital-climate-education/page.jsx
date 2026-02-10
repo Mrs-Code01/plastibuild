@@ -10,8 +10,8 @@ const page = () => {
           { label: "Home", href: "/" },
           {
             label: "E-learning & digital climate education",
-            href: "#"
-          }
+            href: "#",
+          },
         ]}
       />
       {/* End of header */}

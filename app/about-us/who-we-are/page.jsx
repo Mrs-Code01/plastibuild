@@ -11,8 +11,8 @@ const page = () => {
           { label: "Home", href: "/" },
           {
             label: "Who we are",
-            href: "#"
-          }
+            href: "#",
+          },
         ]}
       />
       {/* End of header */}
@@ -23,7 +23,7 @@ const page = () => {
           sustainable manufacturing company
         </h2>
         <Image
-          src="/images/plasti1.jpg"
+          src="/images/plasti14.jpg"
           alt="logo"
           width={230}
           height={230}

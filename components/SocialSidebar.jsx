@@ -1,63 +1,140 @@
+// // SocialSidebar.jsx
+// import {
+//   FaFacebookF,
+//   FaYoutube,
+//   FaInstagram,
+//   FaTwitter,
+//   FaWhatsapp,
+//   FaLinkedinIn,
+// } from "react-icons/fa";
+
+// const SocialSidebar = () => {
+//   return (
+//     <div className="w-[40px] h-[35px] sticky top-[100px] ml-auto flex flex-col space-y-2 z-[100]">
+//       <a
+//         href="https://www.facebook.com/share/1BRUFgBrwS/"
+//         target="_blank"
+//         rel="noopener noreferrer"
+//         className="bg-blue-600 p-3 text-white hover:opacity-80"
+//       >
+//         <FaFacebookF />
+//       </a>
+//       <a
+//         href="https://www.youtube.com/@PlastiBuildCreativeSolutions"
+//         target="_blank"
+//         rel="noopener noreferrer"
+//         className="bg-red-600 p-3 text-white hover:opacity-80"
+//       >
+//         <FaYoutube />
+//       </a>
+//       <a
+//         href="https://instagram.com/plastibuildcreativesolutions?igshid=ZGUzMzM3NWJiOQ=="
+//         target="_blank"
+//         rel="noopener noreferrer"
+//         className="bg-pink-500 p-3 text-white hover:opacity-80"
+//       >
+//         <FaInstagram />
+//       </a>
+//       <a
+//         href="https://twitter.com/Plastibuild?t=T8h3YOZLNHXIJ8SWHNPwXg&s=09"
+//         target="_blank"
+//         rel="noopener noreferrer"
+//         className="bg-sky-500 p-3 text-white hover:opacity-80"
+//       >
+//         <FaTwitter />
+//       </a>
+//       <a
+//         href="https://wa.link/5h5xsa"
+//         target="_blank"
+//         rel="noopener noreferrer"
+//         className="bg-green-500 p-3 text-white hover:opacity-80"
+//       >
+//         <FaWhatsapp />
+//       </a>
+//       <a
+//         href="https://www.linkedin.com/company/plastibuild-creative-solutions/"
+//         target="_blank"
+//         rel="noopener noreferrer"
+//         className="bg-blue-700 p-3 text-white hover:opacity-80"
+//       >
+//         <FaLinkedinIn />
+//       </a>
+//     </div>
+//   );
+// };
+
+// export default SocialSidebar;
+
 // SocialSidebar.jsx
 import {
-  FaFacebookF,
-  FaYoutube,
+  FaFacebook,
   FaInstagram,
   FaTwitter,
+  FaYoutube,
+  FaLinkedin,
   FaWhatsapp,
-  FaLinkedinIn,
 } from "react-icons/fa";
 
 const SocialSidebar = () => {
+  // This class handles the green color and hover effect for all icons
+  const iconStyle =
+    "text-[#008000] hover:opacity-[.5] transition-colors text-[1.6rem] cursor-pointer ";
+
   return (
-    <div className="w-[40px] h-[35px] sticky top-[100px] ml-auto flex flex-col space-y-2 z-[100]">
+    /* flex-row makes it horizontal; space-x-5 adds the gap between icons */
+    <div className="flex space-x-4 py-[28px] z-[100]">
       <a
         href="https://www.facebook.com/share/1BRUFgBrwS/"
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-blue-600 p-3 text-white hover:opacity-80"
+        className={iconStyle}
       >
-        <FaFacebookF />
+        <FaFacebook />
       </a>
-      <a
-        href="https://www.youtube.com/@PlastiBuildCreativeSolutions"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="bg-red-600 p-3 text-white hover:opacity-80"
-      >
-        <FaYoutube />
-      </a>
+
       <a
         href="https://instagram.com/plastibuildcreativesolutions?igshid=ZGUzMzM3NWJiOQ=="
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-pink-500 p-3 text-white hover:opacity-80"
+        className={iconStyle}
       >
         <FaInstagram />
       </a>
+
       <a
         href="https://twitter.com/Plastibuild?t=T8h3YOZLNHXIJ8SWHNPwXg&s=09"
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-sky-500 p-3 text-white hover:opacity-80"
+        className={iconStyle}
       >
         <FaTwitter />
       </a>
+
       <a
-        href="https://wa.link/5h5xsa"
+        href="https://www.youtube.com/@PlastiBuildCreativeSolutions"
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-green-500 p-3 text-white hover:opacity-80"
+        className={iconStyle}
       >
-        <FaWhatsapp />
+        <FaYoutube />
       </a>
+
       <a
         href="https://www.linkedin.com/company/plastibuild-creative-solutions/"
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-blue-700 p-3 text-white hover:opacity-80"
+        className={iconStyle}
       >
-        <FaLinkedinIn />
+        <FaLinkedin />
+      </a>
+
+      <a
+        href="https://wa.link/5h5xsa"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={iconStyle}
+      >
+        <FaWhatsapp />
       </a>
     </div>
   );

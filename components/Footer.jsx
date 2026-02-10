@@ -7,32 +7,32 @@ import { Phone, Mail, Twitter } from "lucide-react";
 import VideoThumbnail from "./VideoThumbnail";
 import VideoModal from "./VideoModal";
 import ChatModal from "../components/ChatModal";
+import SocialSidebar from "./SocialSidebar";
+import Image from "next/image";
 
 const videoData = [
   { id: "3WdGJOxwcug", thumbnail: "/images/plasti7.jpg" },
-  { id: "6SCpEOSMbS4", thumbnail: "/images/plasti10.jpg" }
+  { id: "6SCpEOSMbS4", thumbnail: "/images/plasti10.jpg" },
 ];
 
 const tweets = [
   {
-    text:
-      "Big congratulations to ISWA ARC Member Amidu Mohammed, fondly called AmiduClimate!",
-    link: "https://x.com/iswaafrica/status/1998144481741472232"
+    text: "Big congratulations to ISWA ARC Member Amidu Mohammed, fondly called AmiduClimate!",
+    link: "https://x.com/iswaafrica/status/1998144481741472232",
   },
   {
-    text:
-      "Eco-friendly steal alert! Get ready to step into sustainability in style...",
-    link: "https://x.com/Plastibuild/status/1906680918116368823"
+    text: "Eco-friendly steal alert! Get ready to step into sustainability in style...",
+    link: "https://x.com/Plastibuild/status/1906680918116368823",
   },
   {
     text: "Unlock sustainable growth with plastibuild training school!!",
-    link: "https://x.com/Plastibuild/status/1875248081266200823"
-  }
+    link: "https://x.com/Plastibuild/status/1875248081266200823",
+  },
 ];
 
 const navLinks = [
   { text: "Terms & Condition", ref: "/terms" },
-  { text: "Privacy Policy", ref: "/privacy-policy" }
+  { text: "Privacy Policy", ref: "/privacy-policy" },
 ];
 
 const Footer = () => {
@@ -41,14 +41,14 @@ const Footer = () => {
   const [submittedEmails, setSubmittedEmails] = useState([]);
   const [message, setMessage] = useState("");
 
-  const handleVideoClick = videoId => setSelectedVideo(videoId);
+  const handleVideoClick = (videoId) => setSelectedVideo(videoId);
   const handleCloseModal = () => setSelectedVideo(null);
 
   // Formspree hook
   const [state, handleSubmit] = useForm("xnjnbpny");
 
   // Custom wrapper around Formspree submit
-  const onSubmit = async e => {
+  const onSubmit = async (e) => {
     e.preventDefault();
 
     // Check for duplicate email
@@ -63,7 +63,7 @@ const Footer = () => {
 
     // Safe check for errors
     if (!state.errors || state.errors.length === 0) {
-      setSubmittedEmails(prev => [...prev, email]);
+      setSubmittedEmails((prev) => [...prev, email]);
       setMessage("Thanks for joining!");
       setEmail(""); // clear field
       setTimeout(() => setMessage(""), 10000);
@@ -78,9 +78,14 @@ const Footer = () => {
           <div className="flex flex-wrap gap-y-[2rem] -mx-[0.9375rem]">
             {/* About Us Column */}
             <div className="w-[100%] sm:w-[48%] lg:w-[33%] px-[0.9375rem] mb-[2rem]">
-              <h3 className="font-catamaran text-[1.5625rem] font-semibold text-[#008000] mb-[1.5rem]">
-                About Us
-              </h3>
+              <Image
+                src="/images/logos/plastibuildlogo.png"
+                alt="logo"
+                width={230}
+                height={230}
+                className="bg-[#ffffff] p-[5px] rounded-[10px] mb-[15px]"
+                unoptimized
+              />
               <p className="text-muted-foreground text-[0.875rem] leading-relaxed mb-[1.5rem]">
                 PlastiBuild Creative Solutions Limited is a climate-tech and
                 sustainable manufacturing company transforming how communities
@@ -94,13 +99,13 @@ const Footer = () => {
                 </span>
               </div>
 
-              <div className="flex items-center mb-[2rem]">
+              <div className="flex items-center">
                 <Mail size={16} className="text-primary mr-[0.75rem]" />
                 <span className="text-foreground text-[0.875rem]">
                   plastibuildcreatives@gmail.com
                 </span>
               </div>
-
+              <SocialSidebar />
               {/* Email Subscription */}
               <form onSubmit={onSubmit} className="flex flex-col gap-2">
                 <div className="flex">
@@ -110,7 +115,7 @@ const Footer = () => {
                     type="email"
                     placeholder="Enter your e-mail"
                     value={email}
-                    onChange={e => setEmail(e.target.value)}
+                    onChange={(e) => setEmail(e.target.value)}
                     className="bg-[#ffffff] text-[#000000] text-[17px] px-[1rem] py-[0.75rem] rounded-tl-[0.625rem] rounded-bl-[0.625rem] outline-none placeholder:text-muted-foreground w-[65%] max-[500px]:text-[14px]"
                   />
                   <ValidationError

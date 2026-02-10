@@ -7,12 +7,12 @@ const VideoModal = ({ videoId, isOpen, onClose }) => {
 
   return (
     <div
-      className="fixed z-[100] inset-0 z-50 flex items-center justify-center bg-background/90 animate-fade-in"
+      className="fixed z-[100] inset-0 flex items-center justify-center bg-background/90 animate-fade-in"
       onClick={onClose}
     >
       <div
         className="relative w-[90%] max-w-[900px] animate-scale-in"
-        onClick={e => e.stopPropagation()}
+        onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
