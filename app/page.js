@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import ServiceCards from "./services/page";
 import Testimonial from "@/components/TestimonialSection";
 import Chat from "@/components/Chat";
 import FadeSlider from "@/components/FadeSlider";
@@ -245,7 +246,7 @@ const page = () => {
 
           {/* RIGHT SIDE (TEXT) */}
           <div>
-            <h2 className="font-catamaran text-[2rem] font-bold text-[#008000] mb-[10px]">
+            <h2 className="font-catamaran text-[2rem] font-bold text-[#008000] mb-[10px] max-[750px]:text-[28px]">
               PlastiBuild Services
             </h2>
 
@@ -272,7 +273,7 @@ const page = () => {
             </ul>
 
             <Link
-              href="/services"
+              href="#services"
               className="font-raleway w-[170px] mx-auto mt-6 px-6 py-[10px] border border-[#008000] text-[#008000] rounded-full hover:bg-[#008000] hover:text-white transition cursor-pointer inline-block text-center"
             >
               View More
@@ -280,6 +281,7 @@ const page = () => {
           </div>
         </section>
       </section>
+      <ServiceCards />
       {/* End of services */}
       {/* End of services */}
       <section className="w-[90%] mx-auto mb-[130px] flex justify-between flex-wrap gap-y-[50px]">

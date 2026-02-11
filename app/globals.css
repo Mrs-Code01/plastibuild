@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "leaflet/dist/leaflet.css";
 
+html {
+  scroll-behavior: smooth;
+}
+
 .font-raleway {
   font-family: var(--raleway-font);
 }

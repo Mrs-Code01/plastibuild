@@ -62,11 +62,8 @@ const services = [
 
 const ProductGrid = () => {
   return (
-    <section className="py-20 px-[5%] bg-gray-50 mt-[70px]">
+    <section className="pb-[100px] px-[5%]" id="services">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-center text-3xl font-bold mb-4 text-[#001f3f] font-catamaran">
-          Our Services
-        </h2>
         {/* Grid Layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((product) => (
