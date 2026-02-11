@@ -40,7 +40,7 @@ const navItems = [
   },
   {
     label: "Services",
-    href: "/services",
+    href: "#services",
   },
   { label: "Media", href: "/media" },
 ];
